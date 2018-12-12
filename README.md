@@ -8,7 +8,7 @@ What follows is an approximated translation of the original README file, which w
 
 When the mail server processes the email, it broke down the transaction across several lines into the log file. In case of large mail traffic, the lines related to different email are mixed up, sometimes the records related to one email are several dozen lines apart. This greatly hinders reading the logs. In order to solve this problem, some time ago I wrote a script in Perl with the original name ``maillog``. Over time, functionalities were added to it and bugs were fixed.
 
-## Opportunities
+## Options
 
 The script scans the log files, grouping the lines by email. Entries are highlighted in color depending on the success of the delivery, addresses are highlighted.
 
