@@ -2,7 +2,7 @@
 
 ## Translation note
 
-What follows is an approximated translation of the original README file, which was written in russian (it is now renamed as ``README_ru.md``).
+What follows is an approximated translation of the original README file, which was written in russian and it is now renamed as ``README_ru.md``.
 
 ## Introduction
 
