@@ -38,7 +38,7 @@
 
 # Settings ###################################################################
 
-my $filePattern='/var/log/mail/mail*.{log,log.gz}';
+my $filePattern='';
 my $LESS="less -S -R --shift=1";
 
 use strict;
@@ -329,6 +329,7 @@ sub param
         elsif ($param eq '-V'){ showVer() }
         elsif ($param eq '-v'){ $verbose++ }
         elsif ($param eq '-e'){ $errors = 1 }
+	elsif ($param eq '-F'){ $filePattern = shift }
         elsif ($param eq '-t'){ $to =   shift }
         elsif ($param eq '-f'){ $from = shift }
         elsif ($param eq '-d'){ parseDateParam(shift, $bDate, $eDate) }
