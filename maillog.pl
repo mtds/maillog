@@ -1,5 +1,6 @@
 #!/usr/bin/perl
-# Анализатор почтовых логов
+#
+# Mail Log Analyzer
 # Ver 1.7
 #
 # Copyright (C) 2010 Alexander Sokoloff <asokol@mail.ru>
@@ -9,33 +10,36 @@
 # the Free Software Foundation; either version 2, or (at your option)
 # any later version.
 
-# Использование: maillog [-d DATE] [-f FROM] [-t TO] [-e] [-h] [-V]
+# Use: maillog [-F mail*.log] [-d DATE] [-f FROM] [-t TO] [-e] [-h] [-V]
 #
-# Показывает записи в почтовом логе для писем идущих с адреса FROM к
-# адресу TO за период указаный в опции DATE.
+# Shows the entries in the mail log for email coming from the FROM address 
+# to the TO address for a period of time specified with the DATE option:
 #
-#   -f FROM почтовый адрес отправителя (или его часть).
+#   -F which files have to be parsed.
 #
-#   -t TO   почтовый адрес получателя (или его часть).
+#   -f FROM mailing address of the sender (or part of it).
 #
-#   -d DATE выводить отчет за указанный период, если опция пропущена
-#           выводятся записи только за текущий день.
+#   -t TO mailing address of the recipient (or part thereof).
 #
-#     DD/MM/YY-DD/MM/YY   Полный формат:
-#        -DD/MM/YY   Пропущена начальная дата:
-#                    будут показаны записи с 1 января 1970 года.
-#      DD/MM/YY-     Пропущена конечная дата:
-#                    будут показаны записи до текущей даты.
-#       -            Пропущена как начальная, так и конечная даты:
-#                    будут показаны записи с 1 января 1970 года до
-#                    текущей даты.
+#   -d DATE to print the report for the specified period, if the option is skipped, only entries for the current day are displayed.
 #
-#   -e      показывать только недоставленные сообщения.
+#       DD/MM/YY-DD/MM/YY Full format:
 #
-#   -h      показать страницу помощи.
+#       -DD/MM/YY Missing start date:
+#                           entries from January 1, 1970 will be shown.
 #
-#   -V      показать версию программы и лицензию.
-
+#       DD/MM/YY- Missing end date:
+#                           entries up to the current date are displayed.
+#
+#       - Missing both the start and end dates:
+#                           entries from January 1, 1970 to current date.
+#
+#   -e show only undelivered messages.
+#
+#   -h show help page.
+#
+#   -V show program version and license.
+ 
 # Settings ###################################################################
 
 my $filePattern='';
